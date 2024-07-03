@@ -1,0 +1,105 @@
+:root {
+    --main-color: #4F5165;
+    --second-color: #e8f4f8;
+    --third-color: #049f9f;
+    --default-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background: var(--main-color);
+}
+
+.heading {
+    color: var(--third-color);
+    font-size: 30px;
+}
+
+.message {
+    position: absolute;
+    top: 50px;
+    color: var(--second-color);
+    font-size: 50px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* Main Container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Board - Cell's Container */
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+}
+
+/* Individual Cells */
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    font-size: 60px;
+    color: transparent;
+    background: transparent;
+    border-radius: 10px;
+    border: 2px solid var(--main-color);
+    box-shadow: var(--default-shadow);
+    transition: all 100ms;
+}
+
+.cell:hover {
+    border: 2px solid var(--second-color);
+}
+
+
+/* Buttons */
+button {
+    padding: 10px 15px;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: var(--second-color);
+    background: var(--third-color);
+    border: none;
+    border-radius: 5px;
+    box-shadow: var(--default-shadow);
+    transition: all 200ms;
+    cursor: pointer;
+}
+
+.change-button {
+    font-size: 20px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+button:hover {
+    box-shadow: initial;
+}
+
+
+@media screen and (max-width: 575px) {
+    .message {
+        top: 100px;
+        font-size: 30px;
+    }
+}
